@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: #dda842;
+}
+
+.clock {
+  position: relative;
+  background-color: #091921;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  max-width: 100%;
+  height: 500px;
+  border: 10px solid#091921;
+  border-radius: 50%;
+  position: relative;
+  background-image: url(images/clock.png);
+  background-size: cover;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+    0 -15px 15px rgba(255, 255, 255, 0.03),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.03);
+}
+
+.clock::after {
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px;
+  z-index: 4;
+}
+
+.hand {
+  position: absolute;
+  border-radius: 6px;
+  transition: all 0.04s cubic-bezier(0, 0, 1, 2);
+}
+
+.hand#hour {
+  position: absolute;
+  background-color: #ff105e;
+  width: 15px;
+  height: 150px;
+  z-index: 3;
+}
+
+.hand#minute {
+  position: absolute;
+  background-color: #fff;
+  width: 10px;
+  height: 200px;
+  z-index: 2;
+}
+
+.hand#second {
+  position: absolute;
+  background-color: #4285f4;
+  width: 5px;
+  height: 200px;
+  z-index: 1;
+}
+
+#second::before {
+  content: '';
+  transform: translateY(-60px);
+  width: 5px;
+  height: 60px;
+  background-color: #4285f4;
+  position: absolute;
+  border-radius: 6px;
+}
